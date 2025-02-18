@@ -1,23 +1,20 @@
-import { Grid2, Container } from '@mui/material';
-import { Navbar } from './Navbar';
-import { ReactNode } from 'react';
+import { Grid2 } from "@mui/material";
+import { ReactNode } from "react";
+import { Navbar } from "./Navbar";
 
 interface LayoutProps {
-  children: ReactNode;
+    children: ReactNode;
 }
 
 export const Layout = ({ children }: LayoutProps) => {
-  return (
-    <Container sx={{ 
-      display: 'flex', 
-      flexGrow:1,
-      flexDirection: 'column',
-      minHeight: '100vh',
-    }}>
-      <Navbar />
-      <Grid2 container flexGrow={1}>
-        {children}
-      </Grid2>
-    </Container>
-  );
-}; 
+    return (
+        <Grid2 container height="100vh" direction="column">
+            <Grid2>
+                <Navbar />
+            </Grid2>
+            <Grid2 container flexGrow={1} direction="column">
+                {children}
+            </Grid2>
+        </Grid2>
+    );
+};
